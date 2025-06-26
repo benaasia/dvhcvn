@@ -10,6 +10,19 @@
   <meta name="theme-color" content="#2196f3" />
   <meta property="og:title" content="Đơn Vị Hành Chính Việt Nam - Tra cứu, tìm kiếm nhanh">
   <meta property="og:description" content="Tra cứu, tìm kiếm đơn vị hành chính Việt Nam: tỉnh/thành phố, phường/xã, mã địa giới, dữ liệu cập nhật mới nhất.">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HR05PP1787"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-HR05PP1787');
+  </script>
   <style>
     body {
       background: linear-gradient(120deg, #232946 0%, #3e497a 100%);
@@ -17,30 +30,20 @@
       font-family: 'Montserrat', Arial, sans-serif;
     }
     .main-header {
-      display: flex;
-      flex-direction: column;
       max-width: 1200px;
       margin: 32px auto 0 auto;
       background: #232946;
       color: #fff;
       border-radius: 32px;
       box-shadow: 0 8px 40px rgba(35, 41, 70, 0.13);
-      padding: 40px 48px 32px 48px;
+      padding: 32px 40px;
       transition: box-shadow 0.3s;
       box-sizing: border-box;
     }
     .main-header:hover {
       box-shadow: 0 16px 64px rgba(35, 41, 70, 0.18);
     }
-    .main-columns {
-      display: flex;
-      flex-direction: row;
-      align-items: stretch;
-      gap: 40px;
-      height: 100%;
-    }
     .header-content {
-      flex: 3;
       display: flex;
       flex-direction: column;
     }
@@ -88,18 +91,6 @@
       display: flex;
       flex-direction: column;
       margin-top: 0;
-      background: #1a1f33;
-      color: #fff;
-      border-radius: 22px;
-      box-shadow: 0 6px 32px rgba(35, 41, 70, 0.10);
-      padding: 32px 28px 24px 28px;
-      max-width: 720px;
-      margin-left: auto;
-      margin-right: auto;
-      transition: box-shadow 0.3s;
-    }
-    .form-box:hover {
-      box-shadow: 0 12px 48px rgba(35, 41, 70, 0.16);
     }
     .form-title {
       font-size: 1.35rem;
@@ -150,6 +141,7 @@
     }
     .search-group input {
       flex: 1;
+      min-width: 0;
       border-radius: 16px;
       background: #232946;
       color: #fff;
@@ -161,6 +153,25 @@
     .search-group input:focus {
       border: 1.5px solid #2196f3;
       background: #1a1f33;
+    }
+    .clear-btn {
+      background: #3e497a;
+      border: none;
+      border-radius: 14px;
+      color: #fff;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      flex-shrink: 0;
+    }
+    .clear-btn:hover {
+      background: #4a588a;
+      transform: translateY(-1px);
     }
     .search-btn {
       background: linear-gradient(90deg, #2196f3 0%, #3e497a 100%);
@@ -183,21 +194,17 @@
       transform: translateY(-2px) scale(1.07);
     }
     .stat-box {
-      flex: 1 1 0;
-      height: 100%;
       display: flex;
       flex-direction: column;
-      background: #1a1f33;
-      color: #fff;
-      border-radius: 22px;
-      box-shadow: 0 6px 32px rgba(35, 41, 70, 0.10);
-      padding: 14px 10px 10px 10px;
-      min-width: 180px;
       margin-top: 24px;
-      transition: box-shadow 0.3s;
     }
-    .stat-box:hover {
-      box-shadow: 0 12px 48px rgba(35, 41, 70, 0.16);
+    .stat-items-row {
+      display: flex;
+      gap: 16px;
+    }
+    .stat-items-row .stat-item {
+      flex: 1;
+      margin-bottom: 0;
     }
     .stat-title {
       font-size: 1rem;
@@ -239,7 +246,7 @@
       transform: translateY(-2px) scale(1.04);
     }
     .stat-label {
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       font-weight: 400;
       color: #bfc8e6;
       margin-top: 2px;
@@ -248,7 +255,6 @@
     #result ul.list-group {
       border-radius: 14px;
       overflow: hidden;
-      box-shadow: 0 2px 12px rgba(35, 41, 70, 0.08);
     }
     #result .list-group-item {
       white-space: normal !important;
@@ -264,12 +270,8 @@
       border-bottom: none;
     }
     @media (max-width: 900px) {
-      .main-columns {
-        flex-direction: column;
-        gap: 0;
-      }
       .main-header {
-        padding: 24px 8px 16px 8px;
+        padding: 24px 16px;
       }
       .header-content, .stat-box {
         width: 100%;
@@ -278,7 +280,7 @@
     }
     @media (max-width: 600px) {
       .main-header {
-        padding: 0 2vw 0 2vw;
+        padding: 16px;
         border-radius: 0;
         margin: 0;
         max-width: 100vw;
@@ -287,19 +289,6 @@
         padding: 18px 4px 10px 4px;
         border-radius: 0;
         max-width: 100vw;
-      }
-      .main-columns {
-        flex-direction: column;
-        gap: 0;
-      }
-      .header-content, .stat-box {
-        width: 100%;
-        max-width: 100%;
-      }
-      .form-box, .stat-box {
-        max-width: 100vw;
-        margin-left: 0;
-        margin-right: 0;
       }
       .header-title {
         font-size: 0.95rem;
@@ -382,10 +371,10 @@
       color: #fff !important;
     }
     .selected-info {
-      background: linear-gradient(120deg, #7b6eea 0%, #8f6ed5 100%);
+      background: linear-gradient(120deg, #2196f3 0%, #3e497a 100%);
       border-radius: 18px;
       padding: 18px 18px 12px 18px;
-      margin-top: 24px;
+      margin-top: 0;
       color: #fff;
       box-shadow: 0 2px 16px rgba(120, 80, 180, 0.10);
       font-family: 'Montserrat', Arial, sans-serif;
@@ -509,6 +498,43 @@
         font-size: 1.01rem;
       }
     }
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: -12px;
+      margin-right: -12px;
+    }
+    .row > * {
+      box-sizing: border-box;
+      padding-left: 12px;
+      padding-right: 12px;
+      margin-bottom: 24px;
+      flex: 0 0 auto;
+      width: 100%;
+    }
+    @media (min-width: 992px) {
+      .main-header > .row > * {
+        margin-bottom: 0;
+      }
+      .col-lg-8 { flex: 0 0 auto; width: 66.666667%; }
+      .col-lg-12 { flex: 0 0 auto; width: 100%; }
+      .col-lg-4 {
+        flex: 0 0 auto;
+        width: 33.333333%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+    @media (min-width: 768px) {
+      .col-md-6 { flex: 0 0 auto; width: 50%; }
+    }
+    .stat-item span {
+      font-size: 2rem;
+      display: block;
+      font-weight: 700;
+      line-height: 1.2;
+    }
   </style>
 </head>
 <body>
@@ -522,58 +548,66 @@
     </p>
   </div>
   <div class="main-header">
-    <div class="main-columns">
-      <div class="header-content">
+    <div class="row">
+      <div class="col-lg-8">
         <div class="form-box">
           <div class="form-title"><i class="fa-solid fa-location-dot"></i> Chọn Địa Điểm</div>
-          <form id="searchForm" class="row g-3">
-            <div class="col-md-6">
-              <label for="provinceSelect" class="form-label"><i class="fa-solid fa-city"></i> Tỉnh/Thành phố</label>
-              <select id="provinceSelect" class="form-select">
-                <option value="">-- Chọn tỉnh/thành phố --</option>
-              </select>
-            </div>
-            <div class="col-md-6">
-              <label for="wardSelect" class="form-label"><i class="fa-solid fa-location-arrow"></i> Phường/Xã</label>
-              <select id="wardSelect" class="form-select">
-                <option value="">-- Chọn phường/xã --</option>
-              </select>
-            </div>
-            <div class="col-12">
-              <label for="searchInput" class="form-label"><i class="fa-solid fa-magnifying-glass"></i> Tìm kiếm địa điểm</label>
-              <div class="search-group">
-                <input type="text" id="searchInput" class="form-control" placeholder="Nhập tên tỉnh/thành phố hoặc phường/xã...">
-                <div id="suggestionList" class="suggestion-list" style="display:none;"></div>
-                <button type="submit" class="search-btn"><i class="fa-solid fa-search"></i></button>
+          <form id="searchForm">
+            <div class="row">
+              <div class="col-md-6">
+                <label for="provinceSelect" class="form-label"><i class="fa-solid fa-city"></i> Tỉnh/Thành phố</label>
+                <select id="provinceSelect" class="form-select">
+                  <option value="">-- Chọn Tỉnh/Thành phố --</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label for="wardSelect" class="form-label"><i class="fa-solid fa-location-arrow"></i> Phường/Xã</label>
+                <select id="wardSelect" class="form-select">
+                  <option value="">-- Chọn Phường/Xã --</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label for="searchInput" class="form-label"><i class="fa-solid fa-magnifying-glass"></i> Tìm kiếm địa điểm</label>
+                <div class="search-group">
+                  <input type="text" id="searchInput" class="form-control" placeholder="Nhập tên Tỉnh/Thành phố hoặc Phường/Xã...">
+                  <button type="button" id="clearBtn" class="clear-btn" style="display: none;"><i class="fa-solid fa-xmark"></i></button>
+                  <div id="suggestionList" class="suggestion-list" style="display:none;"></div>
+                  <button type="submit" class="search-btn"><i class="fa-solid fa-search"></i></button>
+                </div>
               </div>
             </div>
+            <div id="result" class="mt-4"></div>
           </form>
-          <hr>
-          <div id="result" class="mt-4"></div>
-          <div id="selectedInfo" class="selected-info" style="display:none;">
-            <div class="selected-info-title">
-              <i class="fa-solid fa-circle-info"></i> Thông Tin Đã Chọn
-            </div>
-            <div class="selected-info-group">
-              <div class="selected-info-label"><i class="fa-solid fa-building"></i> Tỉnh/Thành phố:</div>
-              <div class="selected-info-value" id="selectedProvince"></div>
-            </div>
-            <div class="selected-info-group">
-              <div class="selected-info-label"><i class="fa-solid fa-location-dot"></i> Phường/Xã:</div>
-              <div class="selected-info-value" id="selectedWard"></div>
-            </div>
-            <div class="selected-info-group">
-              <div class="selected-info-label"><i class="fa-solid fa-hashtag"></i> Mã Phường/Xã:</div>
-              <div class="selected-info-value" id="selectedWardCode"></div>
-            </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div id="selectedInfo" class="selected-info" style="display:none;">
+          <div class="selected-info-title">
+            <i class="fa-solid fa-circle-info"></i> Thông Tin Đã Chọn
+          </div>
+          <div class="selected-info-group">
+            <div class="selected-info-label"><i class="fa-solid fa-building"></i> Tỉnh/Thành phố:</div>
+            <div class="selected-info-value" id="selectedProvince"></div>
+          </div>
+          <div class="selected-info-group">
+            <div class="selected-info-label"><i class="fa-solid fa-location-dot"></i> Phường/Xã:</div>
+            <div class="selected-info-value" id="selectedWard"></div>
+          </div>
+          <div class="selected-info-group">
+            <div class="selected-info-label"><i class="fa-solid fa-hashtag"></i> Mã Phường/Xã:</div>
+            <div class="selected-info-value" id="selectedWardCode"></div>
           </div>
         </div>
       </div>
-      <div class="stat-box">
-        <div class="stat-title"><i class="fa-solid fa-chart-bar"></i> Thống Kê</div>
-        <div class="stat-item"><i class="fa-solid fa-city"></i><span id="statProvinces">34</span><div class="stat-label">Tỉnh/Thành phố</div></div>
-        <div class="stat-item"><i class="fa-solid fa-location-dot"></i><span id="statWards">3321</span><div class="stat-label">Phường/Xã</div></div>
-        <div class="stat-item"><i class="fa-solid fa-location-arrow"></i><span id="statCurrentWards">0</span><div class="stat-label">Phường/Xã hiện tại</div></div>
+      <div class="col-lg-12">
+        <div class="stat-box">
+          <div class="stat-title"><i class="fa-solid fa-chart-bar"></i> Thống Kê</div>
+          <div class="stat-items-row">
+            <div class="stat-item"><i class="fa-solid fa-city"></i><span id="statProvinces">34</span><div class="stat-label">Tỉnh/Thành</div></div>
+            <div class="stat-item"><i class="fa-solid fa-location-dot"></i><span id="statWards">3321</span><div class="stat-label">Phường/Xã</div></div>
+            <div class="stat-item"><i class="fa-solid fa-location-arrow"></i><span id="statCurrentWards">0</span><div class="stat-label">Phường/Xã hiện tại</div></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

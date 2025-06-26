@@ -10,8 +10,22 @@ document.addEventListener('DOMContentLoaded', () => {
   const selectedWardCode = document.getElementById('selectedWardCode');
   const selectedProvinceCode = document.getElementById('selectedProvinceCode');
   const suggestionList = document.getElementById('suggestionList');
+  const clearBtn = document.getElementById('clearBtn');
   let suggestionTimeout = null;
   let lastQuery = '';
+
+  function resetForm() {
+    provinceSelect.value = '';
+    wardSelect.innerHTML = '<option value="">-- Chọn Phường/Xã --</option>';
+    searchInput.value = '';
+    resultDiv.innerHTML = '';
+    showSelectedInfo('', '', '', '');
+    updateStats();
+    suggestionList.style.display = 'none';
+    clearBtn.style.display = 'none';
+  }
+
+  clearBtn.addEventListener('click', resetForm);
 
   fetch('/api/provinces')
     .then(res => res.json())
@@ -124,8 +138,13 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   });
 
-  searchInput.addEventListener('input', function() {
+  function handleInput() {
     const q = searchInput.value.trim();
+    if (q) {
+      clearBtn.style.display = 'flex';
+    } else {
+      clearBtn.style.display = 'none';
+    }
     if (suggestionTimeout) clearTimeout(suggestionTimeout);
     if (!q) {
       suggestionList.style.display = 'none';
@@ -142,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
           }
           let html = '';
-          data.slice(0,8).forEach(item => {
+          data.slice(0,20).forEach(item => {
             if (item.type === 'province') {
               html += `<li class='suggestion-item' data-type='province' data-province-code='${item.province_code}'>
                 <div class='suggestion-main'>
@@ -171,6 +190,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 provinceSelect.value = provinceCode;
                 provinceSelect.dispatchEvent(new Event('change'));
                 suggestionList.style.display = 'none';
+                searchInput.value = '';
+                handleInput();
               } else if (type === 'ward') {
                 const wardCode = el.getAttribute('data-ward-code');
                 provinceSelect.value = provinceCode;
@@ -180,12 +201,16 @@ document.addEventListener('DOMContentLoaded', () => {
                   wardSelect.dispatchEvent(new Event('change'));
                 }, 250);
                 suggestionList.style.display = 'none';
+                searchInput.value = '';
+                handleInput();
               }
             });
           });
         });
     }, 180);
-  });
+  }
+
+  searchInput.addEventListener('input', handleInput);
 
   searchInput.addEventListener('blur', function() {
     setTimeout(() => {
