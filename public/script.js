@@ -11,8 +11,41 @@ document.addEventListener('DOMContentLoaded', () => {
   const selectedProvinceCode = document.getElementById('selectedProvinceCode');
   const suggestionList = document.getElementById('suggestionList');
   const clearBtn = document.getElementById('clearBtn');
+  const themeToggle = document.getElementById('themeToggle');
+  const themeIcon = document.getElementById('themeIcon');
   let suggestionTimeout = null;
   let lastQuery = '';
+
+  // Theme toggle logic
+  function setTheme(mode) {
+    if (mode === 'light') {
+      document.body.classList.add('light-mode');
+      themeIcon.classList.remove('fa-moon');
+      themeIcon.classList.add('fa-sun');
+    } else {
+      document.body.classList.remove('light-mode');
+      themeIcon.classList.remove('fa-sun');
+      themeIcon.classList.add('fa-moon');
+    }
+  }
+
+  // Load theme from localStorage
+  const savedTheme = localStorage.getItem('theme-mode');
+  if (savedTheme === 'light') setTheme('light');
+  else setTheme('dark');
+
+  themeToggle.addEventListener('click', function() {
+    const isLight = document.body.classList.toggle('light-mode');
+    if (isLight) {
+      themeIcon.classList.remove('fa-moon');
+      themeIcon.classList.add('fa-sun');
+      localStorage.setItem('theme-mode', 'light');
+    } else {
+      themeIcon.classList.remove('fa-sun');
+      themeIcon.classList.add('fa-moon');
+      localStorage.setItem('theme-mode', 'dark');
+    }
+  });
 
   function resetForm() {
     provinceSelect.value = '';
