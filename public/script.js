@@ -8,15 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const selectedProvince = document.getElementById('selectedProvince');
   const selectedWard = document.getElementById('selectedWard');
   const selectedWardCode = document.getElementById('selectedWardCode');
-  const selectedProvinceCode = document.getElementById('selectedProvinceCode');
   const suggestionList = document.getElementById('suggestionList');
   const clearBtn = document.getElementById('clearBtn');
   const themeToggle = document.getElementById('themeToggle');
   const themeIcon = document.getElementById('themeIcon');
   let suggestionTimeout = null;
-  let lastQuery = '';
 
-  // Theme toggle logic
   function setTheme(mode) {
     if (mode === 'light') {
       document.body.classList.add('light-mode');
@@ -29,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Load theme from localStorage
   const savedTheme = localStorage.getItem('theme-mode');
   if (savedTheme === 'light') setTheme('light');
   else setTheme('dark');
