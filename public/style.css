@@ -37,6 +37,28 @@ body {
   color: var(--color-text);
   transition: background 0.3s, color 0.3s;
 }
+
+/* Remove underlines from all links */
+a {
+  text-decoration: none !important;
+}
+
+a:hover {
+  text-decoration: none !important;
+}
+
+a:visited {
+  text-decoration: none !important;
+}
+
+a:active {
+  text-decoration: none !important;
+}
+
+a:focus {
+  text-decoration: none !important;
+}
+
 .theme-toggle {
   position: absolute;
   top: 24px;
@@ -115,6 +137,25 @@ body {
   margin-bottom: 0;
   font-weight: 500;
   opacity: 0.92;
+}
+.header-source {
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+.header-source a {
+  color: var(--color-primary);
+  font-size: 0.95rem;
+  font-weight: 500;
+  opacity: 0.9;
+  transition: opacity 0.3s, color 0.3s;
+}
+.header-source a:hover {
+  opacity: 1;
+  color: var(--color-primary);
+  text-shadow: 0 0 8px rgba(33, 150, 243, 0.3);
+}
+.header-source i {
+  margin-right: 6px;
 }
 .form-box {
   flex: 1 1 0;
