@@ -1,10 +1,3 @@
-# Bộ dữ liệu Đơn Vị Hành Chính Việt Nam 2 cấp
-
-Bộ dữ liệu Đơn Vị Hành Chính Việt Nam theo Nghị quyết số 202/2025/QH15 của Quốc hội
-
-# Demo
-
-Xem demo tại đây: [https://34tinhthanh.com]
 # Dự án Tra cứu Đơn vị Hành chính Việt Nam (34tinhthanh.com)
 
 ![Banner](https://34tinhthanh.com/image.webp)
@@ -12,6 +5,7 @@ Xem demo tại đây: [https://34tinhthanh.com]
 **34tinhthanh.com** là một công cụ tra cứu và chuyển đổi đơn vị hành chính (ĐVHC) Việt Nam, được cập nhật theo dữ liệu mới nhất (ví dụ: Nghị quyết số 202/2025/QH15). Dự án cung cấp một giao diện web trực quan, một bộ API công khai và một công cụ chuyên dụng để chuyển đổi địa chỉ cũ sang địa chỉ mới sau sáp nhập.
 
 **Website chính thức:** [https://34tinhthanh.com](https://34tinhthanh.com)
+**Mã nguồn:** [https://github.com/benaasia/dvhcvn](https://github.com/benaasia/dvhcvn)
 
 ## ✨ Tính năng chính
 
@@ -52,8 +46,8 @@ Dự án được xây dựng trên một kiến trúc kết hợp (hybrid) đ�
 1.  **Tải mã nguồn:**
     Clone hoặc tải mã nguồn của dự án về máy chủ.
     ```bash
-    git clone <your-repo-url> /home/f34tinhthanhcom/34tinhthanh.com
-    cd /home/f34tinhthanhcom/34tinhthanh.com
+    git clone https://github.com/benaasia/dvhcvn.git /path/to/your/project
+    cd /path/to/your/project
     ```
 
 2.  **Cài đặt Backend Node.js:**
@@ -78,16 +72,16 @@ Dự án được xây dựng trên một kiến trúc kết hợp (hybrid) đ�
     - Cập nhật thông tin kết nối database trong file `public/address-api.php`:
       ```php
       $host = 'localhost';
-      $db   = '34tinhthanhcom';
-      $user = '34tinhthanhcom';
-      $pass = 'aumu1ibbyrwxh5f5eyof';
+      $db   = 'database_name';
+      $user = 'username';
+      $pass = 'password';
       ```
 
 4.  **Cấu hình Apache:**
-    - Tạo một file Virtual Host cho trang web (ví dụ: `/etc/apache2/sites-available/34tinhthanh.com.conf`) với nội dung tương tự file `site_134263.conf` trong dự án.
+    - Tạo một file Virtual Host cho trang web (ví dụ: `/etc/apache2/sites-available/34tinhthanh.com.conf`).
     - Đảm bảo `DocumentRoot` trỏ đúng vào thư mục `public`:
       ```apache
-      DocumentRoot "/home/f34tinhthanhcom/34tinhthanh.com/public"
+      DocumentRoot "/path/to/your/project/public"
       ```
     - Kích hoạt các module Apache cần thiết:
       ```bash
@@ -106,14 +100,24 @@ Dự án được xây dựng trên một kiến trúc kết hợp (hybrid) đ�
 5.  **Phân quyền:**
     Đảm bảo người dùng web server (`www-data`) có quyền đọc và thực thi trên thư mục dự án.
     ```bash
-    sudo chown -R www-data:www-data /home/f34tinhthanhcom/34tinhthanh.com
-    sudo find /home/f34tinhthanhcom/34tinhthanh.com -type d -exec chmod 755 {} \;
-    sudo find /home/f34tinhthanhcom/34tinhthanh.com -type f -exec chmod 644 {} \;
+    sudo chown -R www-data:www-data /path/to/your/project
+    sudo find /path/to/your/project -type d -exec chmod 755 {} \;
+    sudo find /path/to/your/project -type f -exec chmod 644 {} \;
     ```
 
 ## ❤️ Ủng hộ
 
 Nếu bạn thấy dự án này hữu ích, hãy xem xét ủng hộ để giúp tác giả duy trì và phát triển dự án.
+
+## 🤝 Đóng góp
+
+Mọi sự đóng góp đều được chào đón! Nếu bạn có ý tưởng cải thiện hoặc muốn sửa lỗi, vui lòng tạo một **Pull Request** trên kho mã nguồn GitHub.
+
+1.  Fork dự án.
+2.  Tạo một nhánh mới (`git checkout -b feature/AmazingFeature`).
+3.  Commit các thay đổi của bạn (`git commit -m 'Add some AmazingFeature'`).
+4.  Push lên nhánh của bạn (`git push origin feature/AmazingFeature`).
+5.  Mở một Pull Request.
 
 ---
 © 2025 34tinhthanh.com
