@@ -27,7 +27,7 @@ Dự án được xây dựng trên một kiến trúc kết hợp (hybrid) đ�
 - **Backend (API chuyển đổi địa chỉ):**
     - **PHP** để xử lý logic chuyển đổi địa chỉ (`/address-api.php`).
     - **MySQL** để lưu trữ và truy vấn bảng ánh xạ (`ward_mappings`) giữa địa chỉ cũ và mới.
-- **Web Server:** **Apache** đóng vai trò là reverse proxy, điều hướng các yêu cầu:
+- **Web Server:** **Apache** hoặc **nginx** đóng vai trò là reverse proxy, điều hướng các yêu cầu:
     - `/api/*` được chuyển đến server Node.js.
     - `/address-api.php` được xử lý bởi PHP-FPM.
     - Các yêu cầu khác được phục vụ dưới dạng tệp tĩnh.
