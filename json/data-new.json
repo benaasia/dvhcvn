@@ -869,8 +869,8 @@
     "administrative_center": "Kiên Giang"
   },
   {
-    "ward_name": "Xã Sơn Hải",
-    "ward_code": "30811",
+    "ward_name": "Đặc khu Kiên Hải",
+    "ward_code": "31108",
     "province_code": "91",
     "province_name": "An Giang",
     "province_short_name": "An Giang",
@@ -1327,8 +1327,8 @@
     "administrative_center": "Kiên Giang"
   },
   {
-    "ward_name": "Xã Phú Hòa",
-    "ward_code": "30685",
+    "ward_name": "Đặc khu Phú Quốc",
+    "ward_code": "31078",
     "province_code": "91",
     "province_name": "An Giang",
     "province_short_name": "An Giang",
@@ -1710,8 +1710,8 @@
     "administrative_center": "Kiên Giang"
   },
   {
-    "ward_name": "Phường Tân Châu",
-    "ward_code": "30376",
+    "ward_name": "Đặc khu Thổ Châu",
+    "ward_code": "31105",
     "province_code": "91",
     "province_name": "An Giang",
     "province_short_name": "An Giang",
@@ -5531,8 +5531,8 @@
     "administrative_center": null
   },
   {
-    "ward_name": "Phường An Xuyên",
-    "ward_code": "32002",
+    "ward_name": "Phường An Trạch",
+    "ward_code": "31988",
     "province_code": "96",
     "province_name": "Cà Mau",
     "province_short_name": "Cà Mau",
@@ -5976,8 +5976,8 @@
     "administrative_center": "Cà Mau"
   },
   {
-    "ward_name": "Xã Hưng Mỹ",
-    "ward_code": "32140",
+    "ward_name": "Xã Hưng Hội",
+    "ward_code": "31906",
     "province_code": "96",
     "province_name": "Cà Mau",
     "province_short_name": "Cà Mau",
@@ -6084,8 +6084,8 @@
     "administrative_center": "Cà Mau"
   },
   {
-    "ward_name": "Phường Lý Văn Lâm",
-    "ward_code": "32014",
+    "ward_name": "Xã Khánh Lâm",
+    "ward_code": "32062",
     "province_code": "96",
     "province_name": "Cà Mau",
     "province_short_name": "Cà Mau",
@@ -6239,8 +6239,8 @@
     "administrative_center": "Cà Mau"
   },
   {
-    "ward_name": "Xã Nguyễn Phích",
-    "ward_code": "32044",
+    "ward_name": "Xã Nguyễn Việt Khái",
+    "ward_code": "32227",
     "province_code": "96",
     "province_name": "Cà Mau",
     "province_short_name": "Cà Mau",
@@ -6261,8 +6261,8 @@
     "administrative_center": "Cà Mau"
   },
   {
-    "ward_name": "Xã Ninh Thạnh Lợi",
-    "ward_code": "31864",
+    "ward_name": "Xã Ninh Quới",
+    "ward_code": "31849",
     "province_code": "96",
     "province_name": "Cà Mau",
     "province_short_name": "Cà Mau",
@@ -6325,8 +6325,8 @@
     "administrative_center": "Cà Mau"
   },
   {
-    "ward_name": "Xã Phong Thạnh",
-    "ward_code": "31957",
+    "ward_name": "Xã Phong Hiệp",
+    "ward_code": "31885",
     "province_code": "96",
     "province_name": "Cà Mau",
     "province_short_name": "Cà Mau",
@@ -6562,8 +6562,8 @@
     "administrative_center": "Cà Mau"
   },
   {
-    "ward_name": "Xã Tân Tiến",
-    "ward_code": "32188",
+    "ward_name": "Xã Tân Lộc",
+    "ward_code": "32083",
     "province_code": "96",
     "province_name": "Cà Mau",
     "province_short_name": "Cà Mau",
@@ -6584,8 +6584,8 @@
     "administrative_center": "Cà Mau"
   },
   {
-    "ward_name": "Xã Tân Tiến",
-    "ward_code": "32188",
+    "ward_name": "Phường Hòa Thành",
+    "ward_code": "32041",
     "province_code": "96",
     "province_name": "Cà Mau",
     "province_short_name": "Cà Mau",
