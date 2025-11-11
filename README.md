@@ -2,7 +2,7 @@
 
 ![Banner](https://34tinhthanh.com/image.webp)
 
-**34tinhthanh.com** là một công cụ tra cứu và chuyển đổi đơn vị hành chính (ĐVHC) Việt Nam, được cập nhật theo dữ liệu mới nhất (ví dụ: Nghị quyết số 202/2025/QH15). Dự án cung cấp một giao diện web trực quan, một bộ API công khai và một công cụ chuyên dụng để chuyển đổi địa chỉ cũ sang địa chỉ mới sau sáp nhập.
+**34tinhthanh.com** là một công cụ tra cứu và chuyển đổi đơn vị hành chính (ĐVHC) Việt Nam, được cập nhật theo dữ liệu mới nhất (Nghị quyết số 202/2025/QH15). Dự án cung cấp một giao diện web trực quan, một bộ API công khai và một công cụ chuyên dụng để chuyển đổi địa chỉ cũ sang địa chỉ mới sau sáp nhập.
 
 **Website chính thức:** [https://34tinhthanh.com](https://34tinhthanh.com)
 **Mã nguồn:** [https://github.com/benaasia/dvhcvn](https://github.com/benaasia/dvhcvn)
@@ -30,7 +30,6 @@ Dự án được xây dựng trên một kiến trúc kết hợp (hybrid) đ�
 - **Web Server:** **Apache** hoặc **nginx** đóng vai trò là reverse proxy, điều hướng các yêu cầu:
     - `/api/*` được chuyển đến server Node.js.
     - `/address-api.php` được xử lý bởi PHP-FPM.
-    - Các yêu cầu khác được phục vụ dưới dạng tệp tĩnh.
 - **Quản lý tiến trình:** **PM2** được sử dụng để quản lý và giữ cho ứng dụng Node.js luôn hoạt động.
 
 ## 🔧 Hướng dẫn Cài đặt và Triển khai
