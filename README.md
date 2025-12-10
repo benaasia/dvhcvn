@@ -16,22 +16,6 @@
 - **Giao diện thân thiện:** Hỗ trợ chế độ Sáng/Tối (Light/Dark mode) và tương thích với các thiết bị di động.
 - **Dữ liệu có thể tải về:** Cung cấp bộ dữ liệu dưới dạng JSON/MySQL cho cộng đồng.
 
-## 🚀 Công nghệ sử dụng
-
-Dự án được xây dựng trên một kiến trúc kết hợp (hybrid) để tối ưu hóa cho từng tác vụ:
-
-- **Frontend:** HTML, CSS, và JavaScript thuần (Vanilla JS).
-- **Backend (API chính):**
-    - **Node.js** và **Express.js** để phục vụ các API tra cứu (`/api/*`).
-    - Dữ liệu được lưu trữ và truy vấn từ file JSON để đạt tốc độ phản hồi nhanh nhất.
-- **Backend (API chuyển đổi địa chỉ):**
-    - **PHP** để xử lý logic chuyển đổi địa chỉ (`/address-api.php`).
-    - **MySQL** để lưu trữ và truy vấn bảng ánh xạ (`ward_mappings`) giữa địa chỉ cũ và mới.
-- **Web Server:** **Apache** hoặc **nginx** đóng vai trò là reverse proxy, điều hướng các yêu cầu:
-    - `/api/*` được chuyển đến server Node.js.
-    - `/address-api.php` được xử lý bởi PHP-FPM.
-- **Quản lý tiến trình:** **PM2** được sử dụng để quản lý và giữ cho ứng dụng Node.js luôn hoạt động.
-
 ## 🔧 Hướng dẫn Cài đặt và Triển khai
 
 ### Yêu cầu
