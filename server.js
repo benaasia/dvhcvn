@@ -24,6 +24,7 @@ function getWards() {
     return wards;
   } catch (err) {
     console.error("Không thể đọc file dữ liệu data-new.json:", err);
+    return null;
   }
 }
 
@@ -55,6 +56,8 @@ app.get('/api/wards', (req, res) => {
 app.get("/api/wards/:code", (req, res) => {
   const { code } = req.params;
   const wards = getWards();
+  if(!wards)
+    return res.status(500).json({ error: "Lỗi máy chủ!" });
   const ward = wards.find((p) => p.ward_code === code);
   if (!ward) return res.status(404).json({ error: "Không tìm thấy phường/xã" });
   res.json(ward || null);
