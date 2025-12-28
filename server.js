@@ -14,6 +14,19 @@ try {
   console.error('Không thể đọc file dữ liệu:', err);
 }
 
+//lấy data phường/xã
+function getWards() {
+  const dataPath = path.join(__dirname, "json", "data-new.json");
+  let wards = [];
+  try {
+    const raw = fs.readFileSync(dataPath, "utf8");
+    wards = JSON.parse(raw);
+    return wards;
+  } catch (err) {
+    console.error("Không thể đọc file dữ liệu data-new.json:", err);
+  }
+}
+
 // Hàm loại bỏ dấu tiếng Việt
 function removeVietnameseTones(str) {
   return str.normalize('NFD')
@@ -36,6 +49,15 @@ app.get('/api/wards', (req, res) => {
   const province = provinces.find(p => p.province_code === province_code);
   if (!province) return res.status(404).json({ error: 'Không tìm thấy tỉnh/thành' });
   res.json(province.wards || []);
+});
+
+// API lấy phường/xã theo code
+app.get("/api/wards/:code", (req, res) => {
+  const { code } = req.params;
+  const wards = getWards();
+  const ward = wards.find((p) => p.ward_code === code);
+  if (!ward) return res.status(404).json({ error: "Không tìm thấy phường/xã" });
+  res.json(ward || null);
 });
 
 // API tìm kiếm theo tên tỉnh/thành hoặc phường/xã
